@@ -18,7 +18,7 @@ function requestLogger(serviceName) {
                     service: serviceName,
                     method: req.method,
                     path: req.originalUrl,
-                    status: req.statusCode
+                    status: res.statusCode
                 });
             } catch (e) {
                 logger.warn({ err: e.message }, 'failed writing log to db');
