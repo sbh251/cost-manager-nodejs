@@ -3,13 +3,13 @@ require('dotenv').config();
 const app = require('./app');
 const connectDb = require('./config/db');
 const logger = require('./config/logger');
-const requestLogger = require('./middlewares/request-logger.middleware');
+// const requestLogger = require('./middlewares/request-logger.middleware');
 
 
 const PORT = Number(process.env.PORT) || 3003;
 const MONGO_URI = process.env.MONGO_URI;
 
-app.use(requestLogger('costs-service'));
+// app.use(requestLogger('costs-service'));
 
 async function start() {
     await connectDb(MONGO_URI);
